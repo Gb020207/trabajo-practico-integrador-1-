@@ -10,9 +10,14 @@ export const ArticleTag = sequelize.define('articletag', {
 
 
 
-Article.belongsToMany(Tag, {through: ArticleTag, foreignKey: 'articleId',as: 'Tag' })
+Article.belongsToMany(Tag, {through: ArticleTag, foreignKey: 'articleId',as: 'Tag', onDelete: 'CASCADE' })
 Tag.belongsToMany(Article, {through: ArticleTag, foreignKey: 'tagId', as: 'Article' })
 
+Tag.addHook("afterDestroy", async (tag) => {
+  const article = await Article.findOne({
+    where: { article_id: tag.dataValues.id },
+  });
+})
 ArticleTag.belongsTo(Article, { foreignKey: 'articleId', as: 'Article' })
 ArticleTag.belongsTo(Tag, { foreignKey: 'tagId', as: 'Tag' })
 

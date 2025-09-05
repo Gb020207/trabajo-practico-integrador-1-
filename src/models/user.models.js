@@ -13,7 +13,5 @@ export const User = sequelize.define('User', {
 })
 
 
-
-User.hasMany(Article,{foreignKey: 'userId', as: 'Articles'}), 
-
-Article.belongsTo(User,{foreignKey: 'userId', as: 'User'})
+Article.belongsTo (User, {foreignKey: 'user_Id', as: 'User'})
+User.hasMany(Article, {foreignKey: 'user_Id', as: 'Articles'})
