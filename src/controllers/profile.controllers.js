@@ -38,6 +38,9 @@ export const getProfilesById = async (req, res) => {
     if(!id){
         return res.status(400).json({msg: 'Id invslido, por favor coloque un id existente'});
     }
+    if (isNaN(id) || Number(id) <= 0) {
+        return res.status(400).json({ msg: "El id debe ser un número positivo" });
+      }
     try {
         const profile = await Profile.findByPk(id);
         if(!profile){
@@ -55,6 +58,9 @@ export const getProfilesById = async (req, res) => {
 }
 export const updateProfile = async (req, res) => {
     const {id} = req.params;
+    if (isNaN(id) || Number(id) <= 0) {
+        return res.status(400).json({ msg: "El id debe ser un número positivo" });
+      }
     const { first_name, last_name, biography, avatar_url, birth_date } = req.body;
     if(!id){
         return res.status(400).json({msg: 'Id invalido, por favor coloque un id existente'});
@@ -79,6 +85,9 @@ export const deleteProfile = async (req, res) => {
     if(!id){
         return res.status(400).json({msg: 'Id invalido, por favor coloque un id existente'});
     }
+    if (isNaN(id) || Number(id) <= 0) {
+        return res.status(400).json({ msg: "El id debe ser un número positivo" });
+      }
     try {
         const profile = await Profile.findByPk(id);
         if(!profile){

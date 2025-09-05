@@ -1,5 +1,6 @@
 import { DataTypes, STRING } from "sequelize";
 import sequelize from "../config/database.js";
+import { User } from "./user.models.js";
 
 export const Profile = sequelize.define('profile', {
     user_id : { type: DataTypes.INTEGER, allowNull: false, unique: true, references: { model: 'Users', key: 'id' } },
@@ -10,3 +11,6 @@ export const Profile = sequelize.define('profile', {
  birth_date : {type: DataTypes.DATE, }
 
 })
+
+User.hasOne(Profile, {foreignKey: 'userId', as: 'Profile'})
+Profile.belongsTo(User, {foreignKey: 'userId', as: 'User'})
