@@ -5,6 +5,7 @@ import routerUser from './src/routes/user.routes.js';
 import routeProfile from './src/routes/profile.routes.js';
 import routerTag from './src/routes/tag.routes.js';
 import routerArticle from './src/routes/article.routes.js';
+import routerArticleTag from './src/routes/article_tag.routes.js';
 dotenv.config();
 
 const app= express();
@@ -18,6 +19,7 @@ app.use('/api', routerUser)
 app.use('/api', routeProfile)
 app.use('/api', routerTag)
 app.use('/',routerArticle)
+app.use('/api', routerArticleTag);
 
 initDB();
 
