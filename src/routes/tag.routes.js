@@ -3,11 +3,11 @@ import { createTag, deleteTag, getAlltags, getTagById, updateTag } from "../cont
 
 const routerTag = Router();
 
-routerTag.post('/', createTag);
-routerTag.get('/', getAlltags);
-routerTag.get('/:id', getTagById);
-routerTag.put('/:id', updateTag);
-routerTag.delete('/:id', deleteTag);
+routerTag.post('/tag', createTag);
+routerTag.get('/tag', getAlltags);
+routerTag.get('/tag/:id', getTagById);
+routerTag.put('/tag/:id', updateTag);
+routerTag.delete('/tag/:id', deleteTag);
 
 export default routerTag;
 

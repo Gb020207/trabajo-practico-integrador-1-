@@ -3,10 +3,10 @@ import { createArticle, deleteArticleById, getAllArticles, getArticleById, updat
 
 const routerArticle = Router();
 
-routerArticle.get("/", getAllArticles);
-routerArticle.post("/", createArticle);
-routerArticle.get("/:id", getArticleById);
-routerArticle.put("/:id", updateArticleById);
-routerArticle.delete("/:id", deleteArticleById);
+routerArticle.get("/article", getAllArticles);
+routerArticle.post("/article", createArticle);
+routerArticle.get("/article/:id", getArticleById);
+routerArticle.put("/article/:id", updateArticleById);
+routerArticle.delete("/article/:id", deleteArticleById);
 
 export default routerArticle;

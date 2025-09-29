@@ -1,5 +1,5 @@
 import { body, param } from "express-validator";
-import { Profile } from "../models/profile.models";
+import { Profile } from "../../models/profile.models.js";
 
 import { validator } from "./validator.js";
 

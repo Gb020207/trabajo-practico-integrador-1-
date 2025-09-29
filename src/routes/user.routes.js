@@ -3,10 +3,10 @@ import { createUser, deleteUserById, getAllUsers, getUserById, updateUserById } 
 
 const routerUser = Router();
 
-routerUser.get("/:id", getUserById);
-routerUser.post("/", createUser);
-routerUser.get("/", getAllUsers);
-routerUser.put("/:id", updateUserById);
-routerUser.delete("/:id", deleteUserById);
+routerUser.get("/user/:id", getUserById);
+routerUser.post("/user", createUser);
+routerUser.get("/user", getAllUsers);
+routerUser.put("/user/:id", updateUserById);
+routerUser.delete("/user/:id", deleteUserById);
 
 export default routerUser;

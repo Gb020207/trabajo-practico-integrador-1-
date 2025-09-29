@@ -1,5 +1,5 @@
 import { body, param } from "express-validator";
-import { ArticleTag } from "../models/article_tag.models.js";
+import { ArticleTag } from "../../models/article_tag.models.js";
 import { validator } from "./validator.js";
 export const validateArticleTag = [
     body('article_id').isInt().withMessage('article_id debe ser un entero').bail()

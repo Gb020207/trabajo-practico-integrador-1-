@@ -5,7 +5,8 @@ import {
   profile,
   register,
 } from '../controllers/auth.controllers.js'
-import { authMiddleware } from "../middleware/auth.middleware.js";
+import { authMiddleware } from "../middleware/validation/auth.middleware.js";
+
 
 export const authRoutes = Router();
 

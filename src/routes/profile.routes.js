@@ -3,10 +3,10 @@ import { createProfile, deleteProfile, getAllProfiles, getProfilesById, updatePr
 
 const routeProfile = Router();
 
-routeProfile.get("/", getAllProfiles);
-routeProfile.post("/", createProfile);
-routeProfile.get("/:id", getProfilesById);
-routeProfile.put("/:id", updateProfile);
-routeProfile.delete("/:id", deleteProfile);
+routeProfile.get("/profile", getAllProfiles);
+routeProfile.post("/profile", createProfile);
+routeProfile.get("/profile/:id", getProfilesById);
+routeProfile.put("/profile/:id", updateProfile);
+routeProfile.delete("/profile/:id", deleteProfile);
 
 export default routeProfile;

@@ -1,5 +1,5 @@
 import { body, param } from "express-validator";
-import { Article } from "../models/article.models.js";
+import { Article } from "../../models/article.models.js";
 import { validator } from "./validator.js";
 export const validateArticle = [
     body('title').notEmpty().withMessage('El título es obligatorio')
