@@ -9,14 +9,15 @@ import { authMiddleware } from "../middleware/validation/auth.middleware.js";
 
 
 export const authRoutes = Router();
+// rutas publicas
+authRoutes.post("/auth/login", login);
 
-authRoutes.post("/login", login);
+authRoutes.post("/auth/register", register);
 
-authRoutes.post("/register", register);
+// rutas privadas
+authRoutes.post("/auth/logout", logout);
 
-authRoutes.post("/logout", logout);
 
-// rutas publica
-authRoutes.get("/profile", authMiddleware, profile);
+authRoutes.get("/auth/userprofile", authMiddleware, profile);
 
 

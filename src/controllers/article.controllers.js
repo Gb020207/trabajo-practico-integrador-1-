@@ -6,7 +6,8 @@ export const createArticle = async (req, res) => {
         return res.status(400).json({ message: 'Faltan datos obligatorios' });
     }
     try {
-        const article = await Article.create({ title, content, excerpt, status });
+
+        const article = await Article.create({ user_id:req.userLogged.id, title, content, excerpt, status });
         res.status(201).json({
             msg: "Articulo creado con exito",
             data: article

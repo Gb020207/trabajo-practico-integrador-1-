@@ -22,7 +22,7 @@ app.use(cookieParser())
 app.use('/api', routerUser)
 app.use('/api', routeProfile)
 app.use('/api', routerTag)
-app.use('/',routerArticle)
+app.use('/api',routerArticle)
 app.use('/api', routerArticleTag);
 app.use('/api', authRoutes )
 app.use(
