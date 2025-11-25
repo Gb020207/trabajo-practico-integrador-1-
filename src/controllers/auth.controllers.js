@@ -60,6 +60,7 @@ try{
       {
         id: user.id,
         username:user.username,
+        role:user.role,
       },
       "mysecret",
       {
@@ -82,7 +83,7 @@ export const logout = async (req, res) => {
   res.clearCookie("token"); // Eliminar cookie del navegador
   return res.json({ message: "Logout exitoso" });
 }
-export const profile = async (req, res,token) => {
+export const profile = async (req, res) => {
     
   try {
     console.log(req.userLogged)
