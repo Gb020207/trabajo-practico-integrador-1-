@@ -7,7 +7,7 @@ export const Article = sequelize.define('Article', {
     content: {type: DataTypes.TEXT, allowNull: false},
     excerpt: {type: DataTypes.STRING(255), allowNull: true},
     status: { type: DataTypes.ENUM('published', 'archived'), defaultValue: 'published' },
-   user_id:{type: DataTypes.INTEGER, allowNull:false, unique:true,references:{model:'User', key:'id'} }
+   
 })
 
 
